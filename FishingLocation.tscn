@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://p4812c6vvbcc"]
+
+[ext_resource type="Script" path="res://FishingLocation.gd" id="1_8pe46"]
+[ext_resource type="Texture2D" uid="uid://bqprpalqwvgfs" path="res://art/Scales Shop background_001.jpg" id="2_ajotu"]
+[ext_resource type="Script" path="res://LakeButton.gd" id="2_yiemj"]
+[ext_resource type="Script" path="res://RiverButton.gd" id="3_8d8qx"]
+[ext_resource type="Script" path="res://OceanButton.gd" id="4_xqshv"]
+
+[node name="FishingLocation" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8pe46")
+
+[node name="ShopBackground" type="Sprite2D" parent="."]
+position = Vector2(578, 322)
+scale = Vector2(1.00347, 1.01875)
+texture = ExtResource("2_ajotu")
+
+[node name="LakeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 168.0
+offset_right = 609.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 25
+text = "Lake"
+script = ExtResource("2_yiemj")
+
+[node name="RiverButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 296.0
+offset_right = 613.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 25
+disabled = true
+text = "River"
+script = ExtResource("3_8d8qx")
+
+[node name="OceanButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 424.0
+offset_right = 621.0
+offset_bottom = 467.0
+theme_override_font_sizes/font_size = 25
+disabled = true
+text = "Ocean"
+script = ExtResource("4_xqshv")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 552.0
+offset_right = 98.0
+offset_bottom = 595.0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[connection signal="pressed" from="LakeButton" to="LakeButton" method="_on_pressed"]
+[connection signal="pressed" from="RiverButton" to="RiverButton" method="_on_pressed"]
+[connection signal="pressed" from="OceanButton" to="OceanButton" method="_on_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

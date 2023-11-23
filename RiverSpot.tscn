@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuank5xqtkvjg"]
+
+[ext_resource type="Script" path="res://RiverSpot.gd" id="1_rnys4"]
+
+[node name="RiverSpot" type="Node2D"]
+script = ExtResource("1_rnys4")
+
+[node name="RiverBackground" type="Sprite2D" parent="."]
+
+[node name="CastLine" type="Button" parent="."]
+offset_left = 976.0
+offset_top = 536.0
+offset_right = 1088.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 25
+text = "Cast line"
+
+[node name="FishBiteTimer" type="Timer" parent="."]
+
+[node name="ReactionTimer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="BiteCueLabel" type="Label" parent="."]
+offset_left = 520.0
+offset_top = 280.0
+offset_right = 630.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 50
+text = "Bite!"
+
+[node name="MissedFishLabel" type="Label" parent="."]
+visible = false
+offset_left = 464.0
+offset_top = 280.0
+offset_right = 693.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 50
+text = "It got away!"
+
+[node name="DelayTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="pressed" from="CastLine" to="." method="_on_cast_line_pressed"]
+[connection signal="timeout" from="FishBiteTimer" to="." method="_on_fish_bite_timer_timeout"]
+[connection signal="timeout" from="ReactionTimer" to="." method="_on_reaction_timer_timeout"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]

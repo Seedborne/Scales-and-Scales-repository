@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cca3h8n0de8gu"]
+
+[ext_resource type="Script" path="res://ScaleScene.gd" id="1_1nn6i"]
+
+[node name="ScaleScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1nn6i")
+
+[node name="InventoryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 156.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 25
+text = "Inventory"
+
+[node name="InventoryPanel" type="Panel" parent="."]
+visible = false
+offset_left = 24.0
+offset_top = 168.0
+offset_right = 496.0
+offset_bottom = 616.0
+
+[node name="WeightDisplay" type="Label" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 296.0
+offset_right = 568.0
+offset_bottom = 319.0
+
+[node name="DropArea" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 232.0
+offset_right = 560.0
+offset_bottom = 272.0
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 552.0
+offset_right = 98.0
+offset_bottom = 595.0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[connection signal="pressed" from="InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Scales & Scales"
+run/main_scene="res://FishShop.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
+
+[autoload]
+
+FishTypes="*res://FishTypes.gd"
+Global="*res://Global.gd"
+InventoryManager="*res://InventoryManager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": []
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
