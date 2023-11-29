@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cutibabetfr7m"]
+[gd_scene load_steps=5 format=3 uid="uid://cutibabetfr7m"]
 
 [ext_resource type="Script" path="res://FishShop.gd" id="1_28k5y"]
 [ext_resource type="Script" path="res://GoFishing.gd" id="2_giot6"]
 [ext_resource type="Texture2D" uid="uid://bqprpalqwvgfs" path="res://art/Scales Shop background_001.jpg" id="2_v512u"]
+[ext_resource type="Script" path="res://ItemContainer.gd" id="4_2ghsf"]
 
 [node name="FishShop" type="Control"]
 layout_mode = 3
@@ -55,10 +56,24 @@ text = "Inventory"
 
 [node name="InventoryPanel" type="Panel" parent="."]
 visible = false
-offset_left = 24.0
-offset_top = 168.0
-offset_right = 496.0
-offset_bottom = 616.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 4.4
+anchor_right = 12.4
+anchor_bottom = 15.4
+offset_top = -8.0
+offset_right = -3.05176e-05
+
+[node name="ItemContainer" type="GridContainer" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+script = ExtResource("4_2ghsf")
 
 [connection signal="pressed" from="Scale" to="." method="_on_scale_pressed"]
 [connection signal="pressed" from="GoFishing" to="GoFishing" method="_on_pressed"]

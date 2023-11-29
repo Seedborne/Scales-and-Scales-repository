@@ -7,7 +7,7 @@ func _ready():
 	river_button = $RiverButton  # Adjust the path to your River button
 	ocean_button = $OceanButton  # Adjust the path to your Ocean button
 	# Initialize button states
-	update_buttons(false, false)
+	update_buttons(true, true)
 
 func update_buttons(is_river_unlocked, is_ocean_unlocked):
 	river_button.disabled = !is_river_unlocked

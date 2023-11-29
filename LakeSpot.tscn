@@ -1,14 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3avjgb0khve8"]
+[gd_scene load_steps=4 format=3 uid="uid://d3avjgb0khve8"]
 
 [ext_resource type="Script" path="res://LakeSpot.gd" id="1_0jxll"]
 [ext_resource type="Texture2D" uid="uid://beweay0fukvb6" path="res://art/Lake background_001 (1).jpg" id="2_wvb4n"]
+[ext_resource type="Script" path="res://ItemContainer.gd" id="3_rl5ya"]
 
 [node name="LakeSpot" type="Node2D"]
 script = ExtResource("1_0jxll")
 
 [node name="LakeBackground" type="Sprite2D" parent="."]
-position = Vector2(576, 310)
-scale = Vector2(0.72, 0.556667)
+position = Vector2(576, 312)
+scale = Vector2(0.72, 0.56)
 texture = ExtResource("2_wvb4n")
 
 [node name="CastLine" type="Button" parent="."]
@@ -56,10 +57,25 @@ text = "Inventory"
 
 [node name="InventoryPanel" type="Panel" parent="."]
 visible = false
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 4.4
+anchor_right = 12.4
+anchor_bottom = 15.4
 offset_left = 24.0
 offset_top = 168.0
 offset_right = 496.0
 offset_bottom = 616.0
+
+[node name="ItemContainer" type="GridContainer" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+script = ExtResource("3_rl5ya")
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 32.0

@@ -3,6 +3,52 @@
 [ext_resource type="Script" path="res://ItemSlot.gd" id="1_psd8w"]
 
 [node name="ItemSlot" type="TextureButton"]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(144, 96)
+anchors_preset = -1
+anchor_right = 0.125
+anchor_bottom = 0.148
+offset_bottom = 0.0960007
 script = ExtResource("1_psd8w")
+
+[node name="FishName" type="Label" parent="."]
+custom_minimum_size = Vector2(128, 48)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.071
+anchor_right = 0.937
+anchor_bottom = 0.583
+offset_left = 0.0719995
+offset_top = 1.184
+offset_right = 2.07199
+offset_bottom = 0.0319977
+horizontal_alignment = 1
+
+[node name="FishSprite" type="Sprite2D" parent="."]
+position = Vector2(72, 64)
+scale = Vector2(0.25, 0.25)
+
+[node name="SellFish" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 176.0
+offset_top = 152.0
+offset_right = 226.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 25
+text = "Sell"
+
+[node name="BackToInventory" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = -80.0
+offset_top = 152.0
+offset_right = 140.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 25
+text = "Back to inventory"
+
+[connection signal="pressed" from="SellFish" to="." method="_on_sell_fish_pressed"]
+[connection signal="pressed" from="BackToInventory" to="." method="_on_back_to_inventory_pressed"]

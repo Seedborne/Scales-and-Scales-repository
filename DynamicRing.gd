@@ -48,7 +48,7 @@ var feedback_timer = 0.0
 var some_tolerance_value = 0.05  # Define this at the top with your other variables
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed: 
+	if Global.input_enabled and event is InputEventMouseButton and event.pressed: 
 		check_ring_alignment()
 
 func check_ring_alignment():
@@ -62,6 +62,7 @@ func check_ring_alignment():
 		feedback_timer = feedback_duration
 		if correct_clicks >= required_correct_clicks:
 			mini_game_win()
+			Global.disable_input()
 		# Add any other success logic here
 	else:
 		# Fail
@@ -71,6 +72,7 @@ func check_ring_alignment():
 		feedback_timer = feedback_duration
 		if mistake_count >= allowed_mistakes:
 			mini_game_lose()
+			Global.disable_input()
 
 func mini_game_lose():
 	$MinigameLose.start()
@@ -92,16 +94,18 @@ func _on_minigame_lose_timeout():
 func _on_minigame_end_timeout():
 	
 	get_tree().change_scene_to_file(Global.current_fishing_location)
-	
+	Global.enable_input()
 
 func catch_fish():
 	var caught_fish_type = FishType.create_random_fish()
 	var weight = randf_range(caught_fish_type.min_weight, caught_fish_type.max_weight)
-	
+	var rounded_weight = round(weight * 100.0) / 100.0  # Round to two decimal places
 	var new_fish = FishItem.new()
 	new_fish.name = caught_fish_type.name
-	new_fish.weight = weight
+	new_fish.weight = rounded_weight
 	new_fish.sprite = caught_fish_type.sprite
-
+	
 	InventoryManager.add_item(new_fish)
-	print("added fish")
+	print("Fish added to inventory: ", new_fish.name, ", Weight: ", new_fish.weight)
+
+

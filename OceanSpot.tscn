@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgjo8b6rk3oom"]
+[gd_scene load_steps=3 format=3 uid="uid://bgjo8b6rk3oom"]
 
 [ext_resource type="Script" path="res://OceanSpot.gd" id="1_1nfms"]
+[ext_resource type="Script" path="res://ItemContainer.gd" id="2_gerrc"]
 
 [node name="OceanSpot" type="Node2D"]
 script = ExtResource("1_1nfms")
@@ -44,7 +45,47 @@ text = "It got away!"
 wait_time = 0.2
 one_shot = true
 
+[node name="InventoryButton" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 156.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 25
+text = "Inventory"
+
+[node name="InventoryPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 4.4
+anchor_right = 12.4
+anchor_bottom = 15.4
+offset_left = 24.0
+offset_top = 168.0
+offset_right = 496.0
+offset_bottom = 616.0
+
+[node name="ItemContainer" type="GridContainer" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+script = ExtResource("2_gerrc")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 552.0
+offset_right = 98.0
+offset_bottom = 595.0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
 [connection signal="pressed" from="CastLine" to="." method="_on_cast_line_pressed"]
 [connection signal="timeout" from="FishBiteTimer" to="." method="_on_fish_bite_timer_timeout"]
 [connection signal="timeout" from="ReactionTimer" to="." method="_on_reaction_timer_timeout"]
 [connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]
+[connection signal="pressed" from="InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
