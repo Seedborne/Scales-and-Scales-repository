@@ -5,6 +5,7 @@ var drag_offset
 var item_data = null
 var original_position = Vector2()
 var is_draggable = true
+signal item_sold(item)
 
 func set_item(item):
 	item_data = item
@@ -60,6 +61,9 @@ func _on_back_to_inventory_pressed():
 
 func _on_sell_fish_pressed():
 	queue_free()
-	InventoryManager.remove_item
+	item_sold.emit(item_data)
+	print("Sell button pressed for: ", item_data.name)
+	print("Value: ", item_data.weight * item_data.price_per_pound)
+	HudScript.add_money(item_data.weight * item_data.price_per_pound)
 	$SellFish.hide()
 	$BackToInventory.hide()

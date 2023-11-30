@@ -15,5 +15,4 @@ func weigh_fish(fish_item):
 	print("Weighing fish: ", fish_item.name, " Weight: ", fish_item.weight)
 	$WeightDisplay.text = str(fish_item.weight) + " lbs"  # Update the weight display text
 	# Update UI or game state here
-
-
+	print("Price: ", fish_item.price_per_pound)

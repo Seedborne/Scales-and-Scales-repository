@@ -104,6 +104,7 @@ func catch_fish():
 	new_fish.name = caught_fish_type.name
 	new_fish.weight = rounded_weight
 	new_fish.sprite = caught_fish_type.sprite
+	new_fish.price_per_pound = caught_fish_type.price_per_pound
 	
 	InventoryManager.add_item(new_fish)
 	print("Fish added to inventory: ", new_fish.name, ", Weight: ", new_fish.weight)

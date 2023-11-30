@@ -13,6 +13,12 @@ func update_inventory_ui():
 		var item_slot = preload("res://ItemSlot.tscn").instantiate()
 		item_slot.set_item(item)  # Set up the item_slot with the item data
 		item_container.add_child(item_slot)
+		print("Inventory item: ", item.name)
+		item_slot.connect("item_sold", _on_item_slot_sold)
+		
+func _on_item_slot_sold(item):
+	InventoryManager.remove_item(item)  # Remove the item from the inventory data
+	print("Item sold signal received for: ", item.name)
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://FishShop.tscn")
