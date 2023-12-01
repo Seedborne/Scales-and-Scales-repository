@@ -1,0 +1,504 @@
+[gd_scene load_steps=31 format=3 uid="uid://bvfe3t4aykg08"]
+
+[ext_resource type="Script" path="res://GuideBook.gd" id="1_gk23d"]
+[ext_resource type="Texture2D" uid="uid://bqprpalqwvgfs" path="res://art/Scales Shop background_001.jpg" id="2_flvgm"]
+[ext_resource type="Texture2D" uid="uid://bm087xvqmwkt3" path="res://art/largemouth_bass.png" id="3_4kikf"]
+[ext_resource type="AudioStream" uid="uid://bqjynp2m6nljn" path="res://art/book_sounds.mp3" id="3_ndw15"]
+[ext_resource type="Texture2D" uid="uid://bw2mpg51ndnak" path="res://art/black_crappie.png" id="4_y38s3"]
+[ext_resource type="Texture2D" uid="uid://cwyse00xyiabg" path="res://art/rainbow_trout.png" id="5_640uw"]
+[ext_resource type="AudioStream" uid="uid://c13tjituv3hfk" path="res://art/page_flip.mp3" id="6_ep842"]
+[ext_resource type="Texture2D" uid="uid://dhh3jq62qyf02" path="res://art/brook_trout.png" id="6_xql88"]
+[ext_resource type="Texture2D" uid="uid://corfuhdihqr1m" path="res://art/snook.png" id="7_1tj13"]
+[ext_resource type="AudioStream" uid="uid://bkeivc8mh3eav" path="res://art/close_book.mp3" id="7_i5vqu"]
+[ext_resource type="Texture2D" uid="uid://dm7l8ylo2iuee" path="res://art/atlantic_salmon.png" id="8_37yqt"]
+[ext_resource type="Texture2D" uid="uid://dx3cr87d1omm2" path="res://art/northern_pike.png" id="9_vvooc"]
+[ext_resource type="Texture2D" uid="uid://bme60ids7y50m" path="res://art/mahi_mahi.png" id="10_4gcjf"]
+[ext_resource type="Texture2D" uid="uid://wul85rvdfbe6" path="res://art/wels_catfish.png" id="11_jop8m"]
+[ext_resource type="Texture2D" uid="uid://d1dawr2mxdsdj" path="res://art/red_lionfish.png" id="12_fmuui"]
+[ext_resource type="Texture2D" uid="uid://d2pxlahi31uwj" path="res://art/koi_carp.png" id="13_odwjn"]
+[ext_resource type="Texture2D" uid="uid://bcj2jdo2esms5" path="res://art/king_salmon.png" id="14_m7hsj"]
+[ext_resource type="Texture2D" uid="uid://bo1qv6m6wo4f8" path="res://art/blue_marlin.png" id="15_4wr2n"]
+[ext_resource type="Texture2D" uid="uid://jc4x6dugbejp" path="res://art/clownfish.png" id="16_fqeog"]
+[ext_resource type="Texture2D" uid="uid://k0fe85r4apea" path="res://art/sturgeon.png" id="17_3jjrq"]
+[ext_resource type="Texture2D" uid="uid://r61bkokr6ctn" path="res://art/swordfish.png" id="18_wlui0"]
+[ext_resource type="Texture2D" uid="uid://bwaubvpupc26u" path="res://art/yellowfin_tuna.png" id="19_kpuf2"]
+[ext_resource type="Texture2D" uid="uid://dhycgd3hktf6r" path="res://art/goliath_tigerfish.png" id="20_lugh1"]
+[ext_resource type="Texture2D" uid="uid://brobq05syuwpx" path="res://art/japanese_eel.png" id="21_2cq1y"]
+[ext_resource type="Texture2D" uid="uid://b0yxtr2wvq4uy" path="res://art/pacific_halibut.png" id="22_fp5ko"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mn56a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmedg"]
+texture = SubResource("CanvasTexture_mn56a")
+modulate_color = Color(0.92549, 0.858824, 0.760784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_re1se"]
+bg_color = Color(0.294118, 0.219608, 0.152941, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.870588, 0.870588, 0.870588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjis8"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdn0m"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="GuideBook" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gk23d")
+
+[node name="ShopBackground" type="Sprite2D" parent="."]
+position = Vector2(578, 322)
+scale = Vector2(1.00347, 1.01875)
+texture = ExtResource("2_flvgm")
+
+[node name="FirstPage" type="Panel" parent="."]
+custom_minimum_size = Vector2(832, 448)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 96.0
+offset_right = 992.0
+offset_bottom = 544.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nmedg")
+
+[node name="LargemouthBass" type="Sprite2D" parent="FirstPage"]
+position = Vector2(96, 64)
+scale = Vector2(0.204808, 0.204808)
+texture = ExtResource("3_4kikf")
+
+[node name="BlackCrappie" type="Sprite2D" parent="FirstPage"]
+position = Vector2(96, 144)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("4_y38s3")
+
+[node name="RainbowTrout" type="Sprite2D" parent="FirstPage"]
+position = Vector2(96, 224)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("5_640uw")
+
+[node name="Brook Trout" type="Sprite2D" parent="FirstPage"]
+position = Vector2(96, 304)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("6_xql88")
+
+[node name="Snook" type="Sprite2D" parent="FirstPage"]
+position = Vector2(96, 384)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("7_1tj13")
+
+[node name="AtlanticSalmon" type="Sprite2D" parent="FirstPage"]
+position = Vector2(576, 64)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("8_37yqt")
+
+[node name="NorthernPike" type="Sprite2D" parent="FirstPage"]
+position = Vector2(576, 144)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("9_vvooc")
+
+[node name="MahiMahi" type="Sprite2D" parent="FirstPage"]
+position = Vector2(576, 224)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("10_4gcjf")
+
+[node name="WelsCatfish" type="Sprite2D" parent="FirstPage"]
+position = Vector2(576, 304)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("11_jop8m")
+
+[node name="RedLionfish" type="Sprite2D" parent="FirstPage"]
+position = Vector2(576, 384)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("12_fmuui")
+
+[node name="BassLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 32.0
+offset_right = 279.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Largemouth Bass
+Weight range: 2 - 22lbs
+Price: $6 per lb"
+
+[node name="CrappieLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 112.0
+offset_right = 285.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Black Crappie
+Weight range: 0.25 - 5lbs
+Price: $7 per lb"
+
+[node name="RainbowTroutLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 192.0
+offset_right = 285.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Rainbow Trout
+Weight range: 1 - 15lbs
+Price: $5 per lb"
+
+[node name="BrookTroutLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 272.0
+offset_right = 285.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Brook Trout
+Weight range: 0.5 - 7lbs
+Price: $9 per lb"
+
+[node name="SnookLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 352.0
+offset_right = 285.0
+offset_bottom = 412.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Snook
+Weight range: 3 - 40lbs
+Price: $4 per lb"
+
+[node name="AtlanticSalmonLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 32.0
+offset_right = 765.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Atlantic Salmon
+Weight range: 4 - 30lbs
+Price: $12 per lb"
+
+[node name="NorthernPikeLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 112.0
+offset_right = 765.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Northern Pike
+Weight range: 5 - 45lbs
+Price: $5 per lb"
+
+[node name="MahiMahiLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 192.0
+offset_right = 765.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Mahi-Mahi
+Weight range: 2 - 50lbs
+Price: $8 per lb"
+
+[node name="WelsCatfishLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 272.0
+offset_right = 765.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Wels Catfish
+Weight range: 10 - 200lbs
+Price: $6 per lb"
+
+[node name="RedLionfishLabel" type="Label" parent="FirstPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 352.0
+offset_right = 765.0
+offset_bottom = 412.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Red Lionfish
+Weight range: 0.5 - 2lbs
+Price: $17 per lb"
+
+[node name="SecondPage" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(832, 448)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 96.0
+offset_right = 992.0
+offset_bottom = 544.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nmedg")
+
+[node name="KoiCarp" type="Sprite2D" parent="SecondPage"]
+position = Vector2(96, 64)
+scale = Vector2(0.265385, 0.265385)
+texture = ExtResource("13_odwjn")
+
+[node name="KingSalmon" type="Sprite2D" parent="SecondPage"]
+position = Vector2(96, 144)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("14_m7hsj")
+
+[node name="BlueMarlin" type="Sprite2D" parent="SecondPage"]
+position = Vector2(576, 384)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("15_4wr2n")
+
+[node name="Clownfish" type="Sprite2D" parent="SecondPage"]
+position = Vector2(576, 304)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("16_fqeog")
+
+[node name="Sturgeon" type="Sprite2D" parent="SecondPage"]
+position = Vector2(576, 224)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("17_3jjrq")
+
+[node name="Swordfish" type="Sprite2D" parent="SecondPage"]
+position = Vector2(576, 64)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("18_wlui0")
+
+[node name="YellowfinTuna" type="Sprite2D" parent="SecondPage"]
+position = Vector2(576, 144)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("19_kpuf2")
+
+[node name="GoliathTigerfish" type="Sprite2D" parent="SecondPage"]
+position = Vector2(96, 384)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("20_lugh1")
+
+[node name="JapaneseEel" type="Sprite2D" parent="SecondPage"]
+position = Vector2(96, 304)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("21_2cq1y")
+
+[node name="PacificHalibut" type="Sprite2D" parent="SecondPage"]
+position = Vector2(96, 224)
+scale = Vector2(0.255769, 0.255769)
+texture = ExtResource("22_fp5ko")
+
+[node name="KoiLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 32.0
+offset_right = 279.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Koi Carp
+Weight range: 2 - 30lbs
+Price: $14 per lb"
+
+[node name="KingSalmonLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 112.0
+offset_right = 285.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "King Salmon
+Weight range: 10 - 60lbs
+Price: $13 per lb"
+
+[node name="PacificHalibutLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 192.0
+offset_right = 285.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Pacific Halibut
+Weight range: 50 - 350lbs
+Price: $9 per lb"
+
+[node name="JapaneseEelLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 272.0
+offset_right = 285.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Japanese Eel
+Weight range: 1 - 6lbs
+Price: $20 per lb"
+
+[node name="GoliathTigerifshLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 352.0
+offset_right = 285.0
+offset_bottom = 412.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Goliath Tigerfish
+Weight range: 5 - 100lbs
+Price: $15 per lb"
+
+[node name="SwordfishLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 32.0
+offset_right = 765.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Swordfish
+Weight range: 100 - 700lbs
+Price: $18 per lb"
+
+[node name="YellowfinLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 112.0
+offset_right = 765.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Yellowfin Tuna
+Weight range: 20 - 400lbs
+Price: $11 per lb"
+
+[node name="SturgeonLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 192.0
+offset_right = 765.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Sturgeon
+Weight range: 30 - 500lbs
+Price: $16 per lb"
+
+[node name="ClownfishLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 272.0
+offset_right = 765.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Clownfish
+Weight range: 0.05 - 3lbs
+Price: $70 per lb"
+
+[node name="BlueMarlinLabel" type="Label" parent="SecondPage"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 352.0
+offset_right = 765.0
+offset_bottom = 412.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Blue Marlin
+Weight range: 200 - 1000lbs
+Price: $25 per lb"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 576.0
+offset_right = 1120.0
+offset_bottom = 619.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_re1se")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tjis8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qdn0m")
+text = "Close"
+
+[node name="BookSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ndw15")
+
+[node name="BookTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="NextPage" type="Button" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 496.0
+offset_right = 985.0
+offset_bottom = 546.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ">"
+flat = true
+
+[node name="LastPage" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 168.0
+offset_top = 496.0
+offset_right = 193.0
+offset_bottom = 546.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "<"
+flat = true
+
+[node name="PageFlip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ep842")
+
+[node name="CloseBook" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_i5vqu")
+volume_db = 12.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="BookTimer" to="." method="_on_book_timer_timeout"]
+[connection signal="pressed" from="NextPage" to="." method="_on_next_page_pressed"]
+[connection signal="pressed" from="LastPage" to="." method="_on_last_page_pressed"]

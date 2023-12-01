@@ -13,7 +13,7 @@ config_version=5
 config/name="Scales & Scales"
 run/main_scene="res://FishShop.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://art/TestFish.png"
+config/icon="res://art/largemouth_bass.png"
 
 [autoload]
 
@@ -22,6 +22,8 @@ Global="*res://Global.gd"
 InventoryManager="*res://InventoryManager.gd"
 HudScript="*res://hud.gd"
 Hud="*res://hud.tscn"
+MusicManager="*res://MusicManager.tscn"
+SoundManager="*res://SoundManager.tscn"
 
 [display]
 

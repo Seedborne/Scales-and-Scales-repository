@@ -1,5 +1,7 @@
 extends TextureButton
 
+class_name ItemSlot
+
 var is_being_dragged = false
 var drag_offset
 var item_data = null
@@ -45,17 +47,19 @@ func check_drop_location(drop_position):
 		$BackToInventory.show()
 	else:
 		print("Dropped elsewhere")
+		SoundManager.play_sound_effect(preload("res://art/cork2.mp3"))
 		reset_to_original_position()  # Call a function to reset the fish item's position
 		# Handle invalid drop location
 	
 func reset_to_original_position():
-	position = original_position  # Reset the position of the item
+	global_position = original_position  # Reset the position of the item
 	is_being_dragged = false  # Ensure dragging is stopped
 
 	
 func _on_back_to_inventory_pressed():
 	reset_to_original_position()
 	set_draggable(true)
+	SoundManager.play_sound_effect(preload("res://art/cork2.mp3"))
 	$SellFish.hide()
 	$BackToInventory.hide()
 

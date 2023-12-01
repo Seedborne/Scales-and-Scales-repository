@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://be7j86ckqhfsp"]
+[gd_scene load_steps=10 format=3 uid="uid://be7j86ckqhfsp"]
 
 [ext_resource type="Texture2D" uid="uid://cndrdp48ul0u1" path="res://art/StaticRing.png" id="1_lv8e0"]
 [ext_resource type="Script" path="res://StaticRing.gd" id="2_duc7h"]
 [ext_resource type="Texture2D" uid="uid://cb5km0vjyyfax" path="res://art/DynamicRing.png" id="2_j00y8"]
 [ext_resource type="Script" path="res://DynamicRing.gd" id="3_2h3y2"]
+[ext_resource type="AudioStream" uid="uid://ddepa0psavdfr" path="res://art/lost_fish.mp3" id="5_en8ps"]
 [ext_resource type="Script" path="res://LostFish.gd" id="5_rvuoy"]
 [ext_resource type="Script" path="res://CaughtFish.gd" id="6_a1kye"]
+[ext_resource type="AudioStream" uid="uid://dlmu1aqomxe36" path="res://art/minigame_win.mp3" id="6_hjv6y"]
+[ext_resource type="AudioStream" uid="uid://daylb8aul6qfy" path="res://art/ping.mp3" id="7_mqgcd"]
 
 [node name="Minigame" type="Node2D"]
 
@@ -14,6 +17,22 @@ position = Vector2(576, 320)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_lv8e0")
 script = ExtResource("2_duc7h")
+
+[node name="MinigameInstructions" type="Label" parent="StaticRing"]
+visible = false
+anchors_preset = -1
+anchor_left = -0.344
+anchor_top = 1.375
+anchor_right = -0.344
+anchor_bottom = 1.375
+offset_left = -255.872
+offset_top = -256.0
+offset_right = 632.128
+offset_bottom = -140.0
+theme_override_font_sizes/font_size = 40
+text = "Click at the moment the gold ring overlaps the 
+white ring. Repeat until you've caught the fish."
+horizontal_alignment = 1
 
 [node name="DynamicRing" type="Sprite2D" parent="."]
 position = Vector2(576, 320)
@@ -32,6 +51,18 @@ one_shot = true
 [node name="MinigameEnd" type="Timer" parent="DynamicRing"]
 wait_time = 1.5
 one_shot = true
+
+[node name="LostFishSound" type="AudioStreamPlayer2D" parent="DynamicRing"]
+stream = ExtResource("5_en8ps")
+volume_db = 8.0
+
+[node name="CaughtFishSound" type="AudioStreamPlayer2D" parent="DynamicRing"]
+stream = ExtResource("6_hjv6y")
+volume_db = 8.0
+
+[node name="RingHitSound" type="AudioStreamPlayer2D" parent="DynamicRing"]
+stream = ExtResource("7_mqgcd")
+volume_db = 2.0
 
 [node name="LostFish" type="Label" parent="."]
 visible = false

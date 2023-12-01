@@ -1,9 +1,190 @@
-[gd_scene load_steps=5 format=3 uid="uid://cutibabetfr7m"]
+[gd_scene load_steps=18 format=3 uid="uid://cutibabetfr7m"]
 
 [ext_resource type="Script" path="res://FishShop.gd" id="1_28k5y"]
 [ext_resource type="Script" path="res://GoFishing.gd" id="2_giot6"]
-[ext_resource type="Texture2D" uid="uid://bqprpalqwvgfs" path="res://art/Scales Shop background_001.jpg" id="2_v512u"]
+[ext_resource type="Texture2D" uid="uid://f5qm0hemjp45" path="res://art/shop_backgorund.png" id="2_h603x"]
 [ext_resource type="Script" path="res://ItemContainer.gd" id="4_2ghsf"]
+[ext_resource type="AudioStream" uid="uid://cg8rc5ypsowdn" path="res://art/menu_select.mp3" id="4_jraek"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulq43"]
+bg_color = Color(0.294118, 0.219608, 0.152941, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.870588, 0.870588, 0.870588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1oxm"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p5oo"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3a6wt"]
+bg_color = Color(0.294118, 0.219608, 0.152941, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.870588, 0.870588, 0.870588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0l4t2"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pvr4"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1c2gf"]
+bg_color = Color(0.294118, 0.219608, 0.152941, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.870588, 0.870588, 0.870588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5faf"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah8qp"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sotg"]
+bg_color = Color(0.294118, 0.219608, 0.152941, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.870588, 0.870588, 0.870588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jyno"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh674"]
+bg_color = Color(0.466667, 0.356863, 0.262745, 0.678431)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [node name="FishShop" type="Control"]
 layout_mode = 3
@@ -15,33 +196,42 @@ script = ExtResource("1_28k5y")
 [node name="ShopBackground" type="Sprite2D" parent="."]
 position = Vector2(578, 322)
 scale = Vector2(1.00347, 1.01875)
-texture = ExtResource("2_v512u")
+texture = ExtResource("2_h603x")
 
 [node name="Scale" type="Button" parent="."]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 552.0
-offset_right = 118.0
-offset_bottom = 595.0
+offset_top = 576.0
+offset_right = 104.0
+offset_bottom = 619.0
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ulq43")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c1oxm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1p5oo")
 text = "Scale"
 
-[node name="Shop" type="Button" parent="."]
+[node name="GuideButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1048.0
-offset_top = 552.0
-offset_right = 1117.0
-offset_bottom = 595.0
+offset_left = 1040.0
+offset_top = 576.0
+offset_right = 1119.0
+offset_bottom = 619.0
 theme_override_font_sizes/font_size = 25
-text = "Shop"
+theme_override_styles/normal = SubResource("StyleBoxFlat_3a6wt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0l4t2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3pvr4")
+text = "Guide"
 
 [node name="GoFishing" type="Button" parent="."]
 layout_mode = 0
 offset_left = 512.0
-offset_top = 552.0
+offset_top = 576.0
 offset_right = 645.0
-offset_bottom = 595.0
+offset_bottom = 619.0
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_1c2gf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o5faf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ah8qp")
 text = "Go Fishing"
 script = ExtResource("2_giot6")
 
@@ -52,6 +242,9 @@ offset_top = 128.0
 offset_right = 156.0
 offset_bottom = 171.0
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_5sotg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3jyno")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nh674")
 text = "Inventory"
 
 [node name="InventoryPanel" type="Panel" parent="."]
@@ -75,5 +268,10 @@ grow_vertical = 2
 columns = 3
 script = ExtResource("4_2ghsf")
 
+[node name="MenuSelect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jraek")
+volume_db = 2.0
+
 [connection signal="pressed" from="Scale" to="." method="_on_scale_pressed"]
+[connection signal="pressed" from="GuideButton" to="." method="_on_guide_button_pressed"]
 [connection signal="pressed" from="GoFishing" to="GoFishing" method="_on_pressed"]

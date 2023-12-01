@@ -1,10 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://cca3h8n0de8gu"]
+[gd_scene load_steps=10 format=3 uid="uid://cca3h8n0de8gu"]
 
 [ext_resource type="Script" path="res://ScaleScene.gd" id="1_1nn6i"]
+[ext_resource type="Texture2D" uid="uid://dgxop5nlb2sa4" path="res://art/scalebackground.png" id="2_u5bn7"]
 [ext_resource type="Script" path="res://ItemContainer.gd" id="2_xyemy"]
 [ext_resource type="Script" path="res://ScaleNode.gd" id="3_ovnux"]
+[ext_resource type="AudioStream" uid="uid://dlmu1aqomxe36" path="res://art/minigame_win.mp3" id="5_c218p"]
+[ext_resource type="AudioStream" uid="uid://daylb8aul6qfy" path="res://art/ping.mp3" id="5_xfbb8"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_y8dok"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kdsh"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.870588, 0.870588, 0.870588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovux0"]
+bg_color = Color(0.309804, 0.309804, 0.309804, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jsoo"]
+bg_color = Color(0.309804, 0.309804, 0.309804, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
 
 [node name="ScaleScene" type="Control"]
 layout_mode = 3
@@ -12,6 +59,10 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_1nn6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+texture = ExtResource("2_u5bn7")
 
 [node name="InventoryButton" type="Button" parent="."]
 visible = false
@@ -39,41 +90,63 @@ script = ExtResource("2_xyemy")
 
 [node name="ScaleNode" type="TextureRect" parent="."]
 show_behind_parent = true
-custom_minimum_size = Vector2(112, 112)
+custom_minimum_size = Vector2(248, 100)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 20.2
-anchor_top = 8.4
-anchor_right = 20.2
-anchor_bottom = 8.4
-offset_top = -3.05176e-05
-offset_right = 112.0
-offset_bottom = 112.0
-texture = SubResource("CanvasTexture_y8dok")
+anchor_left = 19.8
+anchor_top = 5.2
+anchor_right = 26.0
+anchor_bottom = 7.7
+offset_left = -6.10352e-05
+offset_top = -1.52588e-05
+offset_right = -0.00012207
 script = ExtResource("3_ovnux")
 
 [node name="WeightDisplay" type="Label" parent="ScaleNode"]
+top_level = true
+custom_minimum_size = Vector2(192, 58)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.2
-anchor_top = 11.2
-anchor_right = 19.2
-anchor_bottom = 11.2
-offset_left = -2190.4
-offset_top = -1342.4
-offset_right = -1998.4
-offset_bottom = -1278.4
+anchor_left = 0.694
+anchor_top = 0.877
+anchor_right = 0.694
+anchor_bottom = 0.877
+offset_left = 0.511963
+offset_top = -0.296021
+offset_right = 192.512
+offset_bottom = 57.704
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
+
+[node name="WeighFishSound" type="AudioStreamPlayer2D" parent="ScaleNode"]
+stream = ExtResource("5_xfbb8")
+volume_db = 2.0
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 552.0
+offset_top = 576.0
 offset_right = 98.0
-offset_bottom = 595.0
+offset_bottom = 619.0
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kdsh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ovux0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0jsoo")
 text = "Back"
+
+[node name="DragInstruction" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 436.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 20
+text = "Drag a fish onto the scale and click sell."
+
+[node name="SoldFishSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_c218p")
+volume_db = 8.0
 
 [connection signal="pressed" from="InventoryButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

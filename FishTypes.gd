@@ -16,7 +16,7 @@ static func create_rainbow_trout():
 	fish.min_weight = 1.0
 	fish.max_weight = 15.0
 	fish.price_per_pound = 5.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/rainbow_trout.png")
 	return fish
 
 static func create_largemouth_bass():
@@ -25,7 +25,7 @@ static func create_largemouth_bass():
 	fish.min_weight = 2.0
 	fish.max_weight = 22.0
 	fish.price_per_pound = 6.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/largemouth_bass2.png")
 	return fish
 
 static func create_black_crappie():
@@ -34,7 +34,7 @@ static func create_black_crappie():
 	fish.min_weight = 0.25
 	fish.max_weight = 5.0
 	fish.price_per_pound = 7.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/black_crappie.png")
 	return fish
 
 static func create_brook_trout():
@@ -43,7 +43,7 @@ static func create_brook_trout():
 	fish.min_weight = 0.5
 	fish.max_weight = 7.0
 	fish.price_per_pound = 9.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/brook_trout.png")
 	return fish
 
 static func create_snook():
@@ -52,7 +52,7 @@ static func create_snook():
 	fish.min_weight = 3.0
 	fish.max_weight = 40.0
 	fish.price_per_pound = 4.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/snook.png")
 	return fish
 
 static func create_atlantic_salmon():
@@ -61,7 +61,7 @@ static func create_atlantic_salmon():
 	fish.min_weight = 4.0
 	fish.max_weight = 30.0
 	fish.price_per_pound = 12.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/atlantic_salmon.png")
 	return fish
 
 static func create_northern_pike():
@@ -70,7 +70,7 @@ static func create_northern_pike():
 	fish.min_weight = 5.0
 	fish.max_weight = 45.0
 	fish.price_per_pound = 5.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/northern_pike.png")
 	return fish
 
 static func create_mahi_mahi():
@@ -79,7 +79,7 @@ static func create_mahi_mahi():
 	fish.min_weight = 2.0
 	fish.max_weight = 50.0
 	fish.price_per_pound = 8.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/mahi_mahi.png")
 	return fish
 
 static func create_wels_catfish():
@@ -88,7 +88,7 @@ static func create_wels_catfish():
 	fish.min_weight = 10.0
 	fish.max_weight = 200.0
 	fish.price_per_pound = 6.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/wels_catfish.png")
 	return fish
 
 static func create_red_lionfish():
@@ -97,7 +97,7 @@ static func create_red_lionfish():
 	fish.min_weight = 0.5
 	fish.max_weight = 2.0
 	fish.price_per_pound = 17.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/red_lionfish.png")
 	return fish
 
 static func create_koi_carp():
@@ -106,7 +106,7 @@ static func create_koi_carp():
 	fish.min_weight = 2.0
 	fish.max_weight = 30.0
 	fish.price_per_pound = 14.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/koi_carp.png")
 	return fish
 
 static func create_king_salmon():
@@ -115,7 +115,7 @@ static func create_king_salmon():
 	fish.min_weight = 10.0
 	fish.max_weight = 60.0
 	fish.price_per_pound = 13.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/king_salmon.png")
 	return fish
 
 static func create_pacific_halibut():
@@ -124,16 +124,16 @@ static func create_pacific_halibut():
 	fish.min_weight = 50.0
 	fish.max_weight = 350.0
 	fish.price_per_pound = 9.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/pacific_halibut.png")
 	return fish
 
 static func create_japanese_eel():
 	var fish = FishType.new()
-	fish.name = "Japanese Eel (Unagi)"
+	fish.name = "Japanese Eel"
 	fish.min_weight = 1.0
 	fish.max_weight = 6.0
 	fish.price_per_pound = 20.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/japanese_eel.png")
 	return fish
 
 static func create_goliath_tigerfish():
@@ -142,7 +142,7 @@ static func create_goliath_tigerfish():
 	fish.min_weight = 5.0
 	fish.max_weight = 100.0
 	fish.price_per_pound = 15.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/goliath_tigerfish.png")
 	return fish
 
 static func create_swordfish():
@@ -151,16 +151,16 @@ static func create_swordfish():
 	fish.min_weight = 100.0
 	fish.max_weight = 700.0
 	fish.price_per_pound = 18.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/swordfish.png")
 	return fish
 
 static func create_tuna_yellowfin():
 	var fish = FishType.new()
-	fish.name = "Tuna (Yellowfin)"
+	fish.name = "Yellowfin Tuna"
 	fish.min_weight = 20.0
 	fish.max_weight = 400.0
 	fish.price_per_pound = 11.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/yellowfin_tuna.png")
 	return fish
 
 static func create_sturgeon():
@@ -169,7 +169,7 @@ static func create_sturgeon():
 	fish.min_weight = 30.0
 	fish.max_weight = 500.0
 	fish.price_per_pound = 16.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/sturgeon.png")
 	return fish
 
 static func create_clownfish():
@@ -178,7 +178,7 @@ static func create_clownfish():
 	fish.min_weight = 0.05
 	fish.max_weight = 0.3
 	fish.price_per_pound = 70.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/clownfish.png")
 	return fish
 
 static func create_blue_marlin():
@@ -187,7 +187,7 @@ static func create_blue_marlin():
 	fish.min_weight = 200.0
 	fish.max_weight = 1000.0
 	fish.price_per_pound = 25.0
-	fish.sprite = preload("res://art/TestFish.png")
+	fish.sprite = preload("res://art/blue_marlin.png")
 	return fish
 # ... more fish types ...
 

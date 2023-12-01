@@ -8,13 +8,15 @@ var min_scale = Vector2(0.3, 0.3)
 var max_scale = Vector2(0.7, 0.7)
 
 # Speed of scaling. Adjust this value to make the ring shrink/grow faster or slower.
-var scale_speed = 1.2
-
+var min_scale_speed = 1.0
+var max_scale_speed = 2.0
+var scale_speed = randf_range(min_scale_speed, max_scale_speed)
 # Direction of scaling. 1 for growing, -1 for shrinking.
 var scale_direction = -1
 
 func _ready():
 	scale = initial_scale
+	
 
 func _process(delta):
 	# Update the scale of the DynamicRing
@@ -33,7 +35,9 @@ func _process(delta):
 		
 # Existing variables...
 var correct_clicks = 0
-var required_correct_clicks = 5
+var min_required_clicks = 2
+var max_required_clicks = 10
+var required_correct_clicks = randi() % (max_required_clicks - min_required_clicks + 1) + min_required_clicks
 var allowed_mistakes = 1  # This can be increased with stronger lines
 var mistake_count = 0
 
@@ -56,8 +60,10 @@ func check_ring_alignment():
 	
 	if abs(scale.x - static_ring.scale.x) < some_tolerance_value:
 		# Success
+		$RingHitSound.play()
 		correct_clicks += 1
 		print("hit!")
+		print("clicks needed: ", required_correct_clicks)
 		modulate = success_color
 		feedback_timer = feedback_duration
 		if correct_clicks >= required_correct_clicks:
@@ -77,11 +83,13 @@ func check_ring_alignment():
 func mini_game_lose():
 	$MinigameLose.start()
 	hide()
+	$LostFishSound.play()
 	
 func mini_game_win():
 	$MinigameWin.start()
 	hide()
 	catch_fish()
+	$CaughtFishSound.play()
 
 func _on_minigame_win_timeout():
 

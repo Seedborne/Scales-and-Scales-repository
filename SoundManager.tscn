@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://hupgtbypilun"]
+
+[ext_resource type="Script" path="res://SoundManager.gd" id="1_eceki"]
+[ext_resource type="AudioStream" uid="uid://cbikokvdg0om5" path="res://art/cork2.mp3" id="2_b074e"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_eceki")
+
+[node name="DropFishSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_b074e")
+volume_db = 2.0

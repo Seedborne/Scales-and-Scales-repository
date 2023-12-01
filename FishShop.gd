@@ -29,6 +29,7 @@ func _ready():
 func _on_InventoryButton_pressed():
 	inventory_visible = !inventory_visible
 	$InventoryPanel.visible = inventory_visible
+	$MenuSelect.play()
 	if inventory_visible:
 		update_inventory_ui()
 	
@@ -40,6 +41,11 @@ func update_inventory_ui():
 		var item_slot = preload("res://ItemSlot.tscn").instantiate()
 		item_slot.set_item(item)  # Set up the item_slot with the item data
 		item_container.add_child(item_slot)
+		await get_tree().process_frame  # Wait for a frame if using containers that auto-arrange children
+		item_slot.original_position = item_slot.global_position
 
 func _on_scale_pressed():
 	get_tree().change_scene_to_file("res://ScaleScene.tscn")
+
+func _on_guide_button_pressed():
+	get_tree().change_scene_to_file("res://GuideBook.tscn")

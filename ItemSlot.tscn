@@ -1,6 +1,90 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3agtbwyyiivb"]
+[gd_scene load_steps=8 format=3 uid="uid://d3agtbwyyiivb"]
 
 [ext_resource type="Script" path="res://ItemSlot.gd" id="1_psd8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibgfj"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.870588, 0.870588, 0.870588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwbtx"]
+bg_color = Color(0.309804, 0.309804, 0.309804, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t1ny"]
+bg_color = Color(0.309804, 0.309804, 0.309804, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewa8d"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.870588, 0.870588, 0.870588, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rh056"]
+bg_color = Color(0.309804, 0.309804, 0.309804, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jy8rc"]
+bg_color = Color(0.309804, 0.309804, 0.309804, 0.615686)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [node name="ItemSlot" type="TextureButton"]
 custom_minimum_size = Vector2(144, 96)
@@ -11,6 +95,7 @@ offset_bottom = 0.0960007
 script = ExtResource("1_psd8w")
 
 [node name="FishName" type="Label" parent="."]
+z_index = 1
 custom_minimum_size = Vector2(128, 48)
 layout_mode = 1
 anchors_preset = -1
@@ -25,18 +110,21 @@ offset_bottom = 0.0319977
 horizontal_alignment = 1
 
 [node name="FishSprite" type="Sprite2D" parent="."]
-position = Vector2(72, 64)
-scale = Vector2(0.25, 0.25)
+position = Vector2(72, 72)
+scale = Vector2(0.5, 0.5)
 
 [node name="SellFish" type="Button" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = 176.0
-offset_top = 152.0
+offset_top = -112.0
 offset_right = 226.0
-offset_bottom = 195.0
+offset_bottom = -69.0
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ibgfj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gwbtx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6t1ny")
 text = "Sell"
 
 [node name="BackToInventory" type="Button" parent="."]
@@ -44,10 +132,13 @@ visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = -80.0
-offset_top = 152.0
+offset_top = -112.0
 offset_right = 140.0
-offset_bottom = 195.0
+offset_bottom = -69.0
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ewa8d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rh056")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jy8rc")
 text = "Back to inventory"
 
 [connection signal="pressed" from="SellFish" to="." method="_on_sell_fish_pressed"]

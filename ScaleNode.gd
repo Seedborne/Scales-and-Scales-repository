@@ -12,6 +12,7 @@ func is_point_over_scale(global_drop_position):
 
 func weigh_fish(fish_item):
 	# Code to handle the weighing of the fish
+	$WeighFishSound.play()
 	print("Weighing fish: ", fish_item.name, " Weight: ", fish_item.weight)
 	$WeightDisplay.text = str(fish_item.weight) + " lbs"  # Update the weight display text
 	# Update UI or game state here
